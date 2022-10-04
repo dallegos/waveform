@@ -4,17 +4,82 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="styles.css" />
+		<link rel="stylesheet" href="./styles.css" />
 		<title>Waveform</title>
 	</head>
 	<body>
 		<div id="content">
 			<canvas id="canvas"></canvas>
-			<audio autoplay loop controls id="audio">
-				<source src="maxi1.mp3" />
-			</audio>
 		</div>
 
-		<script src="script.js"></script>
+		<audio loop controls id="audio">
+			<source src="" />
+		</audio>
+
+		<fieldset>
+			<legend>Options:</legend>
+
+			<label for="audioSelector">- Audio selector</label>
+			<select id="audioSelector">
+				<option value="" disabled selected></option>
+				<option value="./assets/audio/musica.mp3">
+					Dye O - Midnight Waves
+				</option>
+				<option value="./assets/audio/musica1.mp3">
+					Dye O - Swim for me
+				</option>
+				<option value="./assets/audio/maxi.mp3">
+					MaxiKucan - Notorious B.I.G. & Method Man- Somebody Tear It
+					Off (Remix Prod. By Max)
+				</option>
+				<option value="./assets/audio/maxi1.mp3">
+					MaxiKucan - Patagonia (Original Mix)
+				</option>
+			</select>
+			<br /><br />
+
+			<label for="fftSelector">- FFT selector</label>
+			<select id="fftSelector">
+				<option value="32">32</option>
+				<option value="64">64</option>
+				<option value="128">128</option>
+				<option value="256">256</option>
+				<option value="512">512</option>
+				<option value="1024">1024</option>
+				<option value="2048">2048</option>
+				<option value="4096" selected>4096</option>
+				<option value="8192">8192</option>
+				<option value="16384">16384</option>
+				<option value="32768">32768</option>
+			</select>
+			<br /><br />
+
+			<label for="typeSelector">- Wave type selector</label>
+			<select id="typeSelector">
+				<option value="bars">Bars</option>
+				<option value="sine">Sine</option>
+			</select>
+			<br /><br />
+
+			<label for="barSpacing">- [Bars] Bar spacing</label>
+			<input type="number" id="barSpacing" value="1" min="0" />
+			<br /><br />
+
+			<label for="playbackRate">- Playback rate</label>
+			<input
+				type="number"
+				id="playbackRate"
+				value="1"
+				min="0.2"
+				max="2"
+				step="0.01"
+			/>
+			<br /><br />
+
+			<label for="userAudio">- Upload you audio</label>
+			<input type="file" id="userAudio" accept="audio/*" />
+		</fieldset>
+
+		<script src="./js/script.js" type="module"></script>
 	</body>
 </html>
