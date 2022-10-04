@@ -23,6 +23,7 @@ const canvas = document.getElementById("canvas");
 const canvasCtx = canvas.getContext("2d");
 
 export {
+	audioContext,
 	audioInput,
 	barSpacingInput,
 	playbackRateInput,

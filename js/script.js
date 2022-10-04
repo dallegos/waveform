@@ -8,6 +8,7 @@ import {
 	barSpacingInput,
 	playbackRateInput,
 	userAudioInput,
+	audioContext,
 } from "./constants.js";
 import { observer } from "./utils.js";
 
@@ -116,6 +117,7 @@ function drawCanvas() {
 function init() {
 	audioInput.play();
 	audioInput.volume = 0.3;
+	audioContext.resume();
 	drawCanvas();
 }
 
